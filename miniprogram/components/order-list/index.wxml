@@ -1,0 +1,16 @@
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-orange "></text>
+        座位预定
+    </view>
+    <view class="action">
+        <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="gridModal">
+            设置
+        </button>
+    </view>
+</view>
+<van-cell-group>
+    <van-cell title="二楼自习室（205）" title-class="cell-value" label="明天9:00~明天17:15可在开馆时提前2小时" value="21/50"  />
+    <van-cell title="三楼自习室（305）" title-class="cell-value" label="明天9:00~明天17:15可在开馆时提前2小时" value="10/50"  />
+    <van-cell title="四楼自习室（405）" title-class="cell-value" label="明天9:00~明天17:15可在开馆时提前2小时" value="0/50"  />
+</van-cell-group>

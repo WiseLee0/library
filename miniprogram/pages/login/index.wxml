@@ -1,0 +1,25 @@
+<view class="container">
+  <cu-custom bgColor="bg-gradual-blue" isBack="{{viewType.length}}">
+    <view slot="backText" catch:tap="onBack">返回</view>
+    <view slot="content">图书馆座位预定</view>
+  </cu-custom>
+  <view class="bg-img bg-mask padding-tb-xl box" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');">
+    <view class="btn" wx:if="{{!viewType.length}}">
+      <l-button size="large" bind:tap="changeView" data-type="login">登录</l-button>
+      <l-button size="large" bind:tap="changeView" data-type="register">注册</l-button>
+    </view>
+    <view class="form" wx:else>
+      <van-cell-group style="width:750rpx">
+        <van-field model:value="{{ username }}" clearable label="学号" placeholder="请输入学号" left-icon="smile-o" />
+        <van-field model:value="{{ password }}" type="password" clearable label="密码" placeholder="请输入密码" border="{{ false }}" left-icon="browsing-history-o" />
+      </van-cell-group>
+      <l-button size="large" width="750" bind:tap="onLogin" wx:if="{{viewType == 'login'}}">
+        登录
+      </l-button>
+      <l-button size="large" width="750" bind:tap="onRegister" wx:if="{{viewType == 'register'}}">
+        注册
+      </l-button>
+    </view>
+  </view>
+</view>
+<l-toast />
