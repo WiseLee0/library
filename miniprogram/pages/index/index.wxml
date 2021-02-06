@@ -4,4 +4,26 @@
 <fn-grid></fn-grid>
 <van-notice-bar left-icon="volume-o" mode="closeable" text="疫情期间，请全程佩戴口罩!期间如发现未佩戴口罩将禁用预约系统一周。" />
 <van-notice-bar left-icon="volume-o" mode="closeable" text="因疫情特殊情况，需控制人流，开馆期间内每天每人只可预约一次!" />
-<order-list></order-list>
+<order-list counts="{{counts}}"></order-list>
+<view class="mytarBar">
+  <view class="cu-bar tabbar bg-white">
+    <view class="action">
+      <view class="cuIcon-cu-image">
+        <image src="/assets/home_fill.png"></image>
+      </view>
+      <view class="text-cyan">首页</view>
+    </view>
+    <view class="action">
+      <view class="cuIcon-cu-image" bind:tap="onRulePage">
+        <image src="/assets/form_fill_gray.png"></image>
+      </view>
+      <view class="text-gray">使用规则</view>
+    </view>
+    <view class="action">
+      <view class="cuIcon-cu-image" bind:tap="onMyPage">
+        <image src="/assets/people_fill_gray.png"></image>
+      </view>
+      <view class="text-gray">我的</view>
+    </view>
+  </view>
+</view>

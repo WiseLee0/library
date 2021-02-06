@@ -1,0 +1,18 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">选座预定</view>
+</cu-custom>
+<image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="width:100%;height:1000rpx" wx:if="{{!seats.length}}"></image>
+<view class="cu-list grid col-4 {{gridBorder?'':'no-border'}}" wx:else>
+    <view class="cu-item" wx:for="{{seats}}" wx:key="index" bind:tap="onSelect" data-index="{{index}}">
+        <view class="box">
+            <icon class="iconfont icon-zuowei {{item.exist ? 'high' : ''}} {{selectIndex == index && !item.exist ? 'my-high' : ''}}" />
+            <text class="text-black">{{item.tag}}</text>
+        </view>
+    </view>
+</view>
+<view class="bottom"></view>
+<button bind:tap="onSubmit" class="cu-btn bg-cyan margin-tb-sm lg btn" style="width:80%;margin:0 10%;">
+    预定
+</button>
+<l-toast />

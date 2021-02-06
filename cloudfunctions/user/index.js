@@ -8,7 +8,6 @@ const _ = db.command
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  console.log(event);
   switch (event.action) {
     case "login":
       return await login(event)

@@ -3,7 +3,8 @@
     <view slot="backText" catch:tap="onBack">返回</view>
     <view slot="content">图书馆座位预定</view>
   </cu-custom>
-  <view class="bg-img bg-mask padding-tb-xl box" style="background-image: url('https://ossweb-img.qq.com/images/lol/web201310/skin/big10006.jpg');">
+  <view class="bg-img bg-mask padding-tb-xl box" style="background-image: url('https://6865-hello-3ff0d2-1258595957.tcb.qcloud.la/QQ%E5%9B%BE%E7%89%8720210206215641.jpg?sign=044f3911c101aa0b54ae41b3fcdba9c1&t=1612619832');">
+    <image src="/assets/logo.png" class="logo"/>
     <view class="btn" wx:if="{{!viewType.length}}">
       <l-button size="large" bind:tap="changeView" data-type="login">登录</l-button>
       <l-button size="large" bind:tap="changeView" data-type="register">注册</l-button>

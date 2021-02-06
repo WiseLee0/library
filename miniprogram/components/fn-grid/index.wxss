@@ -1,2 +1,13 @@
 @import "../../colorui/main.wxss";
 @import "../../colorui/icon.wxss";
+.seatContainer{
+    height: 400rpx;
+    width: 100%;
+}
+.reportContainer{
+    height: 600rpx;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

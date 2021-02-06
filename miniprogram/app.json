@@ -1,7 +1,11 @@
 {
   "pages": [
+    "pages/login/index",
     "pages/index/index",
-    "pages/login/index"
+    "pages/seat/index",
+    "pages/history/index",
+    "pages/my/index",
+    "pages/rule/index"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,7 +16,6 @@
   },
   "usingComponents": {
     "cu-custom": "/colorui/components/cu-custom",
-    "l-message": "lin-ui/message/index",
     "l-toast": "lin-ui/toast/index"
   },
   "sitemapLocation": "sitemap.json"

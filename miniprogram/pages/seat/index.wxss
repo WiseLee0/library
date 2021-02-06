@@ -1,0 +1,28 @@
+page{
+    background-color: #fff;
+}
+.box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.icon-zuowei {
+    font-size: 52rpx;
+    color: rgb(231,235,237);
+}
+.high {
+    color: rgb(229,77,66);
+}
+.my-high{
+    color: rgb(28,187,180);
+}
+
+.bottom{
+   height: 180rpx;
+   width: 100%;
+   background-color: #fff;
+}
+.btn{
+    position: fixed;
+    bottom: 40rpx;
+}

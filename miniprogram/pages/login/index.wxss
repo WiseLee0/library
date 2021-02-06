@@ -12,6 +12,7 @@ page {
    display: flex;
    flex-direction: column;
    justify-content: flex-end;
+   align-items: center;
 }
 
 .btn{
@@ -28,4 +29,10 @@ page {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+.logo{
+    width: 600rpx;
+    height: 600rpx;
+    margin-bottom: 200rpx;
 }

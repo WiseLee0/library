@@ -3,14 +3,15 @@
         <text class="cuIcon-title text-orange "></text>
         座位预定
     </view>
-    <view class="action">
+    <!-- <view class="action">
         <button class="cu-btn bg-green shadow" bindtap="showModal" data-target="gridModal">
             设置
         </button>
-    </view>
+    </view> -->
 </view>
-<van-cell-group>
-    <van-cell title="二楼自习室（205）" title-class="cell-value" label="明天9:00~明天17:15可在开馆时提前2小时" value="21/50"  />
-    <van-cell title="三楼自习室（305）" title-class="cell-value" label="明天9:00~明天17:15可在开馆时提前2小时" value="10/50"  />
-    <van-cell title="四楼自习室（405）" title-class="cell-value" label="明天9:00~明天17:15可在开馆时提前2小时" value="0/50"  />
+<image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="width:100%;height:500rpx" wx:if="{{!counts.length}}"></image>
+<van-cell-group wx:else>
+    <van-cell title="二楼自习室（205）" title-class="cell-value" label="开馆时间是7:00到22:00" value="{{counts[0].count}}/50" bind:tap="onOrder" data-room="205" />
+    <van-cell title="三楼自习室（305）" title-class="cell-value" label="开馆时间是7:00到22:00" value="{{counts[1].count}}/50" bind:tap="onOrder" data-room="305" />
+    <van-cell title="四楼自习室（405）" title-class="cell-value" label="开馆时间是7:00到22:00" value="{{counts[2].count}}/50" bind:tap="onOrder" data-room="405" />
 </van-cell-group>

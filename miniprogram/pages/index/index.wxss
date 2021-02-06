@@ -1,0 +1,9 @@
+.mytarBar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+page{
+    background-color: #fff;
+    padding-bottom: 140rpx;
+}

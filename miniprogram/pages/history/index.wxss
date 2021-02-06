@@ -1,0 +1,22 @@
+/* miniprogram/pages/history/index.wxss */
+page{
+    background-color: #fff;
+}
+.van-cell-text{
+    display: inline-block;
+}
+.tag{
+    display: inline-block;
+    margin-left: 20rpx;
+}
+.cell-value{
+   flex: 3;
+}
+
+.right{
+    background-color: rgb(241,37,93);
+    text-align: center;
+    line-height: 140rpx;
+    font-size: 32rpx;
+    color: #fff;
+}

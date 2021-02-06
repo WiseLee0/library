@@ -1,0 +1,101 @@
+<cu-custom bgColor="bg-gradual-blue">
+    <view slot="content">图书馆座位预约</view>
+</cu-custom>
+<view class="flex-sub text-center">
+    <view class="text-xl padding">
+        <text class="text-black text-bold">江西警察学院图书馆座位预约平台使用规则</text>
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>
+        <view class="text-lg">
+            <text class="text-black">监督占座</text>
+        </view>
+    </view>
+</view>
+<view class="flex-sub text-left">
+    <view class="text-df padding">
+        可以查看某个座位是否有人使用，如果有人坐着或者拿书本占座，可以根据查询座位号查看是否有人预约使用，达到监督规范使用座位的作用。
+    </view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>
+        <view class="text-lg">
+            <text class="text-black">使用记录</text>
+        </view>
+    </view>
+</view>
+<view class="flex-sub text-left">
+    <view class="text-df padding">查看本人座位预约和占座举报的记录。</view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>
+        <view class="text-lg">
+            <text class="text-black">违规记录</text>
+        </view>
+    </view>
+</view>
+<view class="flex-sub text-left">
+    <view class="text-df padding">查看本人违规行为的记录。</view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>
+        <view class="text-lg">
+            <text class="text-black">占座举报</text>
+        </view>
+    </view>
+</view>
+<view class="flex-sub text-left">
+    <view class="text-df padding">举报占座行为或反馈图书馆其他情况给图书馆管理人员。</view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>
+        <view class="text-lg">
+            <text class="text-black">座位预约流程</text>
+        </view>
+    </view>
+</view>
+<view class="flex-sub text-left">
+    <view class="text-df padding">平台预约座位--预约成功后在15分钟内刷卡进馆--找到自己预约的座位使用--使用完毕后刷卡离馆</view>
+</view>
+<view class="cu-bar bg-white solid-bottom">
+    <view class="action">
+        <text class="cuIcon-title text-blue"></text>
+        <view class="text-lg">
+            <text class="text-black">座位预约说明</text>
+        </view>
+    </view>
+</view>
+<view class="flex-sub text-left">
+    <view class="text-df padding">① 在平台预约座位成功后，若15分钟内未刷卡进馆，平台将会自动取消，并今日内不得继续使用预约座位功能。</view>
+    <view class="text-df padding">② 座位预约平台将于每日的22：00自动更新，即所有座位将会显示绿色状态。</view>
+    <view class="text-df padding">③ 节假日平台预约时间可能会做出相应调整，注意通知。</view>
+    <view class="text-df padding">④ 座位使用完毕后，刷卡离馆后，平台将自动将此座位显示为有座。</view>
+</view>
+<view class="mytarBar">
+    <view class="cu-bar tabbar bg-white">
+        <view class="action" bind:tap="onIndexPage">
+            <view class="cuIcon-cu-image">
+                <image src="/assets/home_fill_gray.png"></image>
+            </view>
+            <view class="text-gray">首页</view>
+        </view>
+        <view class="action">
+            <view class="cuIcon-cu-image">
+                <image src="/assets/form_fill.png"></image>
+            </view>
+            <view class="text-cyan">使用规则</view>
+        </view>
+        <view class="action">
+            <view class="cuIcon-cu-image" bind:tap="onMyPage">
+                <image src="/assets/people_fill_gray.png"></image>
+            </view>
+            <view class="text-gray">我的</view>
+        </view>
+    </view>
+</view>

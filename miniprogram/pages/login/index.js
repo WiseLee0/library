@@ -1,4 +1,7 @@
-import { apiUserRegister, apiUserLogin } from '../../api/user'
+import {
+  apiUserRegister,
+  apiUserLogin
+} from '../../api/user'
 Page({
 
   /**
@@ -12,26 +15,35 @@ Page({
   // 登录
   onLogin: async function () {
     if (this.virifyFields()) return
-    const { username, password } = this.data
+    const {
+      username,
+      password
+    } = this.data
     const res = await apiUserLogin({
       username: username.trim(),
       password: password.trim()
     })
-    this.handleResponse(res)
+    this.handleResponse(res, 'login')
   },
   // 注册
   onRegister: async function () {
     if (this.virifyFields()) return
-    const { username, password } = this.data
+    const {
+      username,
+      password
+    } = this.data
     const res = await apiUserRegister({
       username: username.trim(),
       password: password.trim()
     })
-    this.handleResponse(res)
+    this.handleResponse(res, 'register')
   },
   // 字段验证
   virifyFields: function () {
-    const { username, password } = this.data
+    const {
+      username,
+      password
+    } = this.data
     if (username.trim().length < 6 && password.trim().length < 6) {
       wx.lin.showToast({
         title: "用户名密码需要大于6位",
@@ -42,12 +54,22 @@ Page({
     return false
   },
   // 返回处理
-  handleResponse: function ({ code, message }) {
+  handleResponse: function ({
+    code,
+    message
+  }, type) {
     if (code == 200) {
       wx.lin.showToast({
         title: message,
         icon: 'success',
         success: () => {
+          if (type == 'login') {
+            wx.redirectTo({
+              url: '/pages/index/index',
+            })
+            wx.setStorageSync('username', this.data.username)
+            wx.setStorageSync('time', new Date().getTime())
+          }
           this.setData({
             viewType: "",
             username: "",
@@ -88,7 +110,18 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const username = wx.getStorageSync('username')
+    const time = wx.getStorageSync('time')
+    if (new Date().getTime() - time > 3 * 24 * 3600 * 1000) {
+      wx.removeStorageSync('username')
+      wx.removeStorageSync('time')
+    } else {
+      if (username && username.length) {
+        wx.redirectTo({
+          url: '/pages/index/index',
+        })
+      }
+    }
   },
 
   /**

@@ -1,4 +1,11 @@
 {
   "component": true,
-  "usingComponents": {}
+  "usingComponents": {
+    "van-action-sheet": "@vant/weapp/action-sheet/index",
+    "van-search": "@vant/weapp/search/index",
+    "l-dialog": "lin-ui/dialog/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-button": "@vant/weapp/button/index",
+    "van-cell-group": "@vant/weapp/cell-group/index"
+  }
 }

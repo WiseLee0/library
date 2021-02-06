@@ -1,0 +1,91 @@
+<cu-custom bgColor="bg-gradual-blue" isBack="{{true}}">
+    <view slot="backText">返回</view>
+    <view slot="content">使用记录</view>
+</cu-custom>
+<image src="https://image.weilanwl.com/gif/loading-white.gif" mode="aspectFit" class="gif-white response" style="width:100%;height:1000rpx" wx:if="{{!lists.length}}"></image>
+<van-cell-group wx:else>
+    <block wx:for="{{lists}}" wx:key="index">
+        <l-slide-view height="140" width="750" slide-width="100" disabled="{{item.end}}" auto-close="{{true}}">
+            <view slot="left" class="left">
+                <van-cell wx:if="{{item.room == 205}}" title-width="450rpx" label="{{time.range(item)}}" value="{{time.transform(item.start)}}" data-item="{{item}}">
+                    <view slot="title">
+                        <view class="van-cell-text">二楼自习室(205)</view>
+                        <van-tag wx:if="{{!item.end}}" color="rgb(28,187,180)" custom-class="tag">
+                            预定中
+                        </van-tag>
+                        <van-tag wx:else color="rgb(141,198,63)" custom-class="tag">
+                            a{{item.seat}}
+                        </van-tag>
+                    </view>
+                </van-cell>
+                <van-cell wx:if="{{item.room == 305}}" title-width="450rpx" label="{{time.range(item)}}" value="{{time.transform(item.start)}}" data-item="{{item}}">
+                    <view slot="title">
+                        <view class="van-cell-text">三楼自习室(305)</view>
+                        <van-tag wx:if="{{!item.end}}" color="rgb(28,187,180)" custom-class="tag">
+                            预定中
+                        </van-tag>
+                        <van-tag wx:else color="rgb(141,198,63)" custom-class="tag">
+                            b{{item.seat}}
+                        </van-tag>
+                    </view>
+                </van-cell>
+                <van-cell wx:if="{{item.room == 405}}" title-width="450rpx" label="{{time.range(item)}}" value="{{time.transform(item.start)}}" data-item="{{item}}">
+                    <view slot="title">
+                        <view class="van-cell-text">四楼自习室(405)</view>
+                        <van-tag wx:if="{{!item.end}}" color="rgb(28,187,180)" custom-class="tag">
+                            预定中
+                        </van-tag>
+                        <van-tag wx:else color="rgb(141,198,63)" custom-class="tag">
+                            c{{item.seat}}
+                        </van-tag>
+                    </view>
+                </van-cell>
+            </view>
+            <view slot="right" class="right" bind:tap="onCancelOrder" data-item="{{item}}">
+                <text>结束</text>
+            </view>
+        </l-slide-view>
+    </block>
+</van-cell-group>
+<wxs module="time">
+var range = function(item){
+    var partten = ''
+    if(item.room == 205) partten = 'a'
+    if(item.room == 305) partten = 'b'
+    if(item.room == 405) partten = 'c'
+    if(!item.end) return '座位:' + partten + item.seat + ' 预定时间:' + dayTime(item.start);
+    else return '预定时间:' + dayTime(item.start) + "~" + dayTime(item.end);
+}
+var transform = function(value) {
+    var time = getDate(value);
+    var year = time.getFullYear();
+    var month = time.getMonth() + 1;
+    var date = time.getDate();
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+    var second = time.getSeconds();
+    month = month < 10 ? "0" + month : month;
+    date = date < 10 ? "0" + date : date;
+    hour = hour < 10 ? "0" + hour : hour;
+    minute = minute < 10 ? "0" + minute : minute;
+    second = second < 10 ? "0" + second : second;
+    return year + "-" + month + "-" + date
+}
+var dayTime = function(value) {
+    var time = getDate(value);
+    var year = time.getFullYear();
+    var month = time.getMonth() + 1;
+    var date = time.getDate();
+    var hour = time.getHours();
+    var minute = time.getMinutes();
+    var second = time.getSeconds();
+    month = month < 10 ? "0" + month : month;
+    date = date < 10 ? "0" + date : date;
+    hour = hour < 10 ? "0" + hour : hour;
+    minute = minute < 10 ? "0" + minute : minute;
+    second = second < 10 ? "0" + second : second;
+    return hour + ":" + minute
+}
+module.exports.transform = transform;
+module.exports.range = range;
+</wxs>
